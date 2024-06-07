@@ -15,24 +15,21 @@ function keyReturn(event) {
     event.target.style.backgroundColor = '';
 }
 
+
+// Write a named function with event handler properties
+
 function changeBackgroundColor(note) {
     note.addEventListener('mousedown', keyPlay);
     note.addEventListener('mouseup', keyReturn);
 
 }
-notes.forEach((note) => {
-    changeBackgroundColor(note) 
-});
-
-
-
-
-
-
-// Write a named function with event handler properties
 
 
 // Write a loop that runs the array elements through the function
+
+notes.forEach((note) => {
+    changeBackgroundColor(note) 
+});
 
 
 // These variables store the buttons that progress the user through the lyrics
@@ -51,12 +48,49 @@ startOver.hidden= true;
 
 // Write anonymous event handler property and function for the first progress button
 
+nextOne.addEventListener('click', () => {
+nextTwo.hidden = false;
+nextOne.hidden = true;
+document.getElementById('letter-note-five').textContent = 'D';
+document.getElementById('letter-note-six').textContent = 'C';
+})
+
 
 // Write anonymous event handler property and function for the second progress button
+
+nextTwo.addEventListener('click', () => {
+    nextThree.hidden = false;
+    nextTwo.hidden = true;
+    document.getElementById('word-five').textContent = 'DEAR';
+    document.getElementById('word-six').textContent = 'FRI-';
+    lastLyric.style.display = 'inline-block';
+    document.getElementById('letter-note-three').textContent = 'G';
+    document.getElementById('letter-note-four').textContent = 'E';
+    document.getElementById('letter-note-five').textContent = 'C';
+    document.getElementById('letter-note-six').textContent = 'B';
+})
 
 
 // Write anonymous event handler property and function for the third progress button
 
+nextThree.addEventListener('click', () => {
+    startOver.hidden = false;
+    nextThree.hidden = true;
+    document.getElementById('word-one').textContent = 'HAP-';
+    document.getElementById('word-two').textContent = 'PY';
+    document.getElementById('word-three').textContent = 'BIRTH-';
+    document.getElementById('word-four').textContent = 'DAY';
+    document.getElementById('word-five').textContent = 'TO';
+    document.getElementById('word-six').textContent = 'YOU!';
+    document.getElementById('letter-note-one').textContent = 'F';
+    document.getElementById('letter-note-two').textContent = 'F';
+    document.getElementById('letter-note-three').textContent = 'E';
+    document.getElementById('letter-note-four').textContent = 'C';
+    document.getElementById('letter-note-five').textContent = 'D';
+    document.getElementById('letter-note-six').textContent = 'C';
+    lastLyric.style.display = 'none';
+
+})
 
 // This is the event handler property and function for the startOver button
 startOver.onclick = function() {
